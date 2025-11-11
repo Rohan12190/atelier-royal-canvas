@@ -62,18 +62,18 @@ const Navbar = () => {
                 <DropdownMenuItem onClick={() => scrollToSection("about")}>
                   Process
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => scrollToSection("contact")}>
-                  Contact
+                <DropdownMenuItem asChild>
+                  <a href="/contact">Contact</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <button
-              onClick={() => scrollToSection("contact")}
+            <a
+              href="/contact"
               className="text-sm uppercase tracking-widest hover:text-accent transition-colors"
             >
               Contact
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu */}
@@ -103,12 +103,12 @@ const Navbar = () => {
                 >
                   Accessories
                 </button>
-                <button
-                  onClick={() => scrollToSection("contact")}
+                <a
+                  href="/contact"
                   className="text-lg uppercase tracking-widest hover:text-accent transition-colors text-left"
                 >
                   Contact
-                </button>
+                </a>
               </div>
             </SheetContent>
           </Sheet>

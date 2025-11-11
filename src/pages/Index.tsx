@@ -135,7 +135,6 @@ const Index = () => {
         />
       </div>
 
-      <ContactForm />
       <Footer />
 
       <ImageLightbox

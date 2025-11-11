@@ -52,12 +52,12 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection("contact")}
+                <a
+                  href="/contact"
                   className="text-primary-foreground/80 hover:text-accent transition-colors"
                 >
                   Contact
-                </button>
+                </a>
               </li>
             </ul>
           </div>
