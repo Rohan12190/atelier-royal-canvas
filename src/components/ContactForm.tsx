@@ -46,17 +46,11 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-8 bg-secondary">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground uppercase tracking-[0.3em]">
-            Let's Create Something Beautiful
-          </p>
-        </div>
-
+    <section id="contact" className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(38 35% 96%) 0%, hsl(38 45% 92%) 100%)" }}>
+      <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-accent/15 blur-3xl" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -110,7 +104,7 @@ const ContactForm = () => {
                         <SelectValue placeholder="Select inquiry type" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-card border-border">
+                    <SelectContent className="bg-gradient-to-br from-card to-secondary border-border z-50">
                       <SelectItem value="general">General Inquiry</SelectItem>
                       <SelectItem value="custom">Custom Order</SelectItem>
                       <SelectItem value="appointment">Book Appointment</SelectItem>

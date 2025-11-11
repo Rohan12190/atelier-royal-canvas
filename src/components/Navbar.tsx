@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -20,13 +21,27 @@ const Navbar = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-all duration-300 ${
+        scrolled 
+          ? "bg-gradient-to-r from-background via-secondary to-background backdrop-blur-md shadow-elegant" 
+          : "bg-background/95 backdrop-blur-sm"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="font-serif text-2xl font-bold tracking-wider hover:text-accent transition-colors"
           >
             ATELIER
@@ -38,7 +53,7 @@ const Navbar = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 text-sm uppercase tracking-widest hover:text-accent transition-colors">
                 Collections <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card border-border">
+              <DropdownMenuContent className="bg-gradient-to-br from-card to-secondary border-border z-50">
                 <DropdownMenuItem onClick={() => scrollToSection("mens-collection")}>
                   Men's
                 </DropdownMenuItem>
@@ -55,7 +70,7 @@ const Navbar = () => {
               <DropdownMenuTrigger className="flex items-center gap-1 text-sm uppercase tracking-widest hover:text-accent transition-colors">
                 About <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card border-border">
+              <DropdownMenuContent className="bg-gradient-to-br from-card to-secondary border-border z-50">
                 <DropdownMenuItem onClick={() => scrollToSection("about")}>
                   Story
                 </DropdownMenuItem>
@@ -83,7 +98,7 @@ const Navbar = () => {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full bg-card">
+            <SheetContent side="right" className="w-full bg-gradient-to-b from-card to-secondary">
               <div className="flex flex-col space-y-6 mt-8">
                 <button
                   onClick={() => scrollToSection("mens-collection")}

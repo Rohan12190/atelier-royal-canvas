@@ -9,8 +9,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground py-16 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <footer className="relative bg-primary text-primary-foreground py-16 px-6 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-accent/30 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-accent/20 blur-3xl" />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
