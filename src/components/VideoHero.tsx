@@ -24,7 +24,7 @@ const VideoHero = () => {
           <source src="/hero-video.mp4" type="video/mp4" />
           {/* Fallback to image if video doesn't load */}
         </video>
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-accent/20 to-black/10" />
       </div>
 
       {/* Hero Content */}

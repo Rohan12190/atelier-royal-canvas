@@ -44,7 +44,7 @@ const Kids = () => {
       <NSNavbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

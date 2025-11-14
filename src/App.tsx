@@ -9,6 +9,7 @@ import Men from "./pages/Men";
 import Kids from "./pages/Kids";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop"; // Import the new component
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop /> {/* Add the component here */}
         <Routes>
           <Route path="/" element={<NSIndex />} />
           <Route path="/women" element={<Women />} />

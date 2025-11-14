@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Mail, Twitter } from "lucide-react";
 
 const NSFooter = () => {
   return (
@@ -79,8 +79,8 @@ const NSFooter = () => {
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
             <Instagram className="w-5 h-5" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
-            <Facebook className="w-5 h-5" />
+          <a href="mailto:info@atelier.com" className="text-gray-400 hover:text-white transition-colors">
+            <Mail className="w-5 h-5" />
           </a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
             <Twitter className="w-5 h-5" />

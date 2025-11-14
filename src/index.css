@@ -8,37 +8,38 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* NEW: Golden Light Theme */
+    --background: 38 70% 96%; /* Light cream */
+    --foreground: 38 25% 20%; /* Dark brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 38 70% 98%; /* Lighter cream */
+    --card-foreground: 38 25% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 38 70% 98%;
+    --popover-foreground: 38 25% 20%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 38 25% 25%; /* Rich dark brown */
+    --primary-foreground: 38 70% 96%; /* Light cream */
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 38 50% 90%; /* Light golden beige */
+    --secondary-foreground: 38 25% 25%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 38 50% 94%; /* Lighter beige */
+    --muted-foreground: 38 20% 45%; /* Soft brown */
 
-    --accent: 0 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 40 70% 55%; /* Rich gold */
+    --accent-foreground: 38 25% 20%; /* Dark brown */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 38 40% 85%; /* Soft beige border */
+    --input: 38 40% 85%;
+    --ring: 40 70% 55%; /* Rich gold */
 
     --radius: 0.5rem;
 
-    /* NS Store Colors */
+    /* NS Store Colors (Old) - Kept for reference but overridden by theme */
     --color-white: 0 0% 100%;
     --color-black: 0 0% 0%;
     --color-gray-dark: 0 0% 20%;
@@ -51,33 +52,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* NEW: Golden Dark Theme */
+    --background: 38 15% 8%; /* Very dark brown */
+    --foreground: 38 70% 96%; /* Light cream */
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --card: 38 15% 12%; /* Darker brown */
+    --card-foreground: 38 70% 96%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 38 15% 12%;
+    --popover-foreground: 38 70% 96%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 38 70% 96%; /* Light cream */
+    --primary-foreground: 38 15% 8%; /* Very dark brown */
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 38 15% 20%; /* Dark muted gold */
+    --secondary-foreground: 38 70% 96%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 38 15% 25%;
+    --muted-foreground: 38 40% 70%; /* Lighter beige */
 
-    --accent: 0 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 40 70% 55%; /* Rich gold */
+    --accent-foreground: 38 15% 8%; /* Very dark brown */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 100%;
+    --border: 38 15% 30%; /* Muted dark gold */
+    --input: 38 15% 30%;
+    --ring: 40 70% 55%; /* Rich gold */
   }
 }
 

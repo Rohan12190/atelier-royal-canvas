@@ -9,7 +9,7 @@ const Contact = () => {
       <NSNavbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-b from-secondary to-background relative overflow-hidden">
+      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-secondary to-background relative overflow-hidden">
         <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
         <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-accent/5 blur-3xl" />
         

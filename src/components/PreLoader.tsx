@@ -7,8 +7,8 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500);
-    }, 2500);
+      setTimeout(onComplete, 500); // 0.5s fade-out
+    }, 2000); // Show for 2 seconds
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -19,25 +19,26 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.5, delay: 2 }}
-      className="fixed inset-0 z-[9999] bg-white flex items-center justify-center"
+      transition={{ duration: 0.5, delay: 1.8 }} // Start fade-out slightly before timer ends
+      className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
     >
-      <div className="relative">
+      <div className="relative flex flex-col items-center">
         {/* NS Logo Animation */}
-        <div className="relative w-[150px] h-[100px] mb-6">
+        <div className="relative w-[150px] h-[100px] mb-6 overflow-hidden">
+          {/* Use clip-path for a "drawing" effect */}
           <motion.div
-            initial={{ x: -100, y: -50, opacity: 0 }}
-            animate={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="absolute top-0 left-0 font-serif text-[100px] font-bold leading-none"
+            initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+            animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+            className="absolute top-0 left-0 font-serif text-[100px] font-bold leading-none text-foreground"
           >
             N
           </motion.div>
           <motion.div
-            initial={{ x: 100, y: 50, opacity: 0 }}
-            animate={{ x: 50, y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="absolute top-0 left-0 font-serif text-[100px] font-bold leading-none"
+            initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+            animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
+            className="absolute top-0 left-[50px] font-serif text-[100px] font-bold leading-none text-foreground"
           >
             S
           </motion.div>
@@ -45,10 +46,10 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
 
         {/* Tagline */}
         <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="font-serif text-xl tracking-[0.2em] uppercase text-center"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.0 }}
+          className="font-serif text-xl tracking-[0.2em] uppercase text-center text-foreground"
         >
           Looks You Remember
         </motion.h2>

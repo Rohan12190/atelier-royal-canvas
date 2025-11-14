@@ -37,7 +37,7 @@ const CollectionSection = ({
           ? "linear-gradient(180deg, hsl(38 35% 96%) 0%, hsl(38 45% 92%) 50%, hsl(38 35% 96%) 100%)"
           : id === "accessories-collection"
           ? "linear-gradient(135deg, hsl(38 25% 92%) 0%, hsl(38 35% 96%) 100%)"
-          : "hsl(var(--background))"
+          : "linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%)"
       }}
     >
       {/* Decorative Elements */}

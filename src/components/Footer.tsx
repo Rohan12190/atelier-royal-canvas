@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Mail, Twitter } from "lucide-react";
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -100,11 +100,11 @@ const Footer = () => {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="mailto:info@atelier.com"
                 className="text-primary-foreground/80 hover:text-accent transition-colors"
-                aria-label="Facebook"
+                aria-label="Email"
               >
-                <Facebook className="h-5 w-5" />
+                <Mail className="h-5 w-5" />
               </a>
               <a
                 href="#"

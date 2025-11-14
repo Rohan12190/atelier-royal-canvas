@@ -21,8 +21,8 @@ const HeroSection = () => {
           alt="Elegant fashion background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-accent/20 via-black/50 to-black/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/30 via-black/60 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent/20" />
       </div>
 
       {/* Decorative gradient orbs */}

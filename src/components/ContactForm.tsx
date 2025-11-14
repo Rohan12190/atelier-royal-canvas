@@ -46,7 +46,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: "linear-gradient(180deg, hsl(38 35% 96%) 0%, hsl(38 45% 92%) 100%)" }}>
+    <section id="contact" className="py-24 px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-background to-secondary">
       <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
       <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-accent/15 blur-3xl" />
       
