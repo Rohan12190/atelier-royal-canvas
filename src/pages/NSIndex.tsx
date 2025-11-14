@@ -2,7 +2,7 @@ import { useState } from "react";
 import PreLoader from "@/components/PreLoader";
 import NSNavbar from "@/components/NSNavbar";
 import VideoHero from "@/components/VideoHero";
-import HorizontalCarousel from "@/components/HorizontalCarousel";
+import Carousel3D from "@/components/Carousel3D";
 import FeaturedSection from "@/components/FeaturedSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -17,12 +17,12 @@ import mensEvening from "@/assets/mens-evening-wear.jpg";
 import mensCasual from "@/assets/mens-casual-elegance.jpg";
 
 const carouselImages = [
-  { src: womensCouture, alt: "Women's Haute Couture" },
-  { src: womensReady, alt: "Women's Ready to Wear" },
-  { src: womensStatement, alt: "Women's Statement Pieces" },
-  { src: mensTailored, alt: "Men's Tailored Suit" },
-  { src: mensEvening, alt: "Men's Evening Wear" },
-  { src: mensCasual, alt: "Men's Casual Elegance" },
+  { src: womensCouture, alt: "Women's Haute Couture", title: "Haute Couture" },
+  { src: womensReady, alt: "Women's Ready to Wear", title: "Ready to Wear" },
+  { src: womensStatement, alt: "Women's Statement Pieces", title: "Statement" },
+  { src: mensTailored, alt: "Men's Tailored Suit", title: "Tailored" },
+  { src: mensEvening, alt: "Men's Evening Wear", title: "Evening" },
+  { src: mensCasual, alt: "Men's Casual Elegance", title: "Casual" },
 ];
 
 const NSIndex = () => {
@@ -36,7 +36,7 @@ const NSIndex = () => {
         <div className="min-h-screen">
           <NSNavbar />
           <VideoHero />
-          <HorizontalCarousel images={carouselImages} />
+          <Carousel3D images={carouselImages} />
           <FeaturedSection />
           <CategoriesSection />
           <BenefitsSection />

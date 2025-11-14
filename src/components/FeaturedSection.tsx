@@ -5,15 +5,15 @@ import featuredImage from "@/assets/womens-haute-couture.jpg";
 const FeaturedSection = () => {
   return (
     <section id="featured" className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh] w-full">
-      {/* Left Column - Image with Red Background */}
-      <div className="bg-[hsl(var(--accent))] flex items-center justify-center p-12">
+      {/* Left Column - Image with Gradient Background */}
+      <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-12">
         <motion.img
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           src={featuredImage}
           alt="Featured Look"
-          className="w-[80%] h-auto object-cover"
+          className="w-[80%] h-auto object-cover shadow-2xl"
         />
       </div>
 

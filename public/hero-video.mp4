@@ -1,0 +1,12 @@
+// Placeholder for video file
+// To add your own video:
+// 1. Download or create a fashion video (MP4 format recommended)
+// 2. Place the video file in the public folder as 'hero-video.mp4'
+// 3. The VideoHero component will automatically use it
+// 
+// Recommended specs:
+// - Duration: 10-30 seconds (looped)
+// - Resolution: 1920x1080 or higher
+// - File size: Keep under 10MB for faster loading
+// - Format: MP4 (H.264 codec)
+

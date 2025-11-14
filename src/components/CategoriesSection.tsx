@@ -32,7 +32,7 @@ const CategoriesSection = () => {
 
           {/* Category Link */}
           <a
-            href={`#${category.name.toLowerCase()}`}
+            href={`/${category.name.toLowerCase()}`}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 bg-white/90 text-black px-8 py-3 rounded-full uppercase text-sm tracking-wider hover:bg-white transition-colors"
           >
             {category.name}
