@@ -18,9 +18,11 @@ const VideoHero = () => {
           loop
           muted
           playsInline
+          poster={heroImage}
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover animate-[kenBurnsZoom_15s_infinite_alternate]"
         >
-          <source src={heroImage} type="video/mp4" />
+          <source src="/hero-video.mp4" type="video/mp4" />
+          {/* Fallback to image if video doesn't load */}
         </video>
         <div className="absolute inset-0 bg-black/20" />
       </div>
