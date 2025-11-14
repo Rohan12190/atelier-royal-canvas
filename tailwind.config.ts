@@ -120,6 +120,14 @@ export default {
             opacity: "0.5",
           },
         },
+        "kenBurnsZoom": {
+          "0%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "100%": {
+            transform: "translate(-50%, -50%) scale(1.1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
