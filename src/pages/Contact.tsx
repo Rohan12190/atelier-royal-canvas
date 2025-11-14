@@ -1,12 +1,12 @@
-import Navbar from "@/components/Navbar";
+import NSNavbar from "@/components/NSNavbar";
 import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
+import NSFooter from "@/components/NSFooter";
 import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <NSNavbar />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-b from-secondary to-background relative overflow-hidden">
@@ -32,7 +32,7 @@ const Contact = () => {
       </section>
 
       <ContactForm />
-      <Footer />
+      <NSFooter />
     </div>
   );
 };
