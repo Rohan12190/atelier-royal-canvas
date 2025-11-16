@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import AnimatedButton from "@/components/AnimatedButton";
 import featuredImage from "@/assets/womens-haute-couture.jpg";
 
 const FeaturedSection = () => {
@@ -44,13 +44,10 @@ const FeaturedSection = () => {
             blend of classic sophistication and modern artistry, crafted for
             looks you'll remember forever.
           </p>
-          <Button
-            size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-widest px-8 py-6"
+          <AnimatedButton
+            text="Learn More"
             onClick={() => scrollToSection("benefits")}
-          >
-            Learn More →
-          </Button>
+          />
         </motion.div>
       </div>
     </section>

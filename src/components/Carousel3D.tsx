@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedButton from "@/components/AnimatedButton";
 
 interface Carousel3DProps {
   images: { src: string; alt: string; title: string }[];
@@ -174,20 +175,13 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                 onDrag={handleDrag}
                 onDragEnd={handleDragEnd}
                 onClick={() => handleCardClick(imageIndex)}
-                initial={(dir: number) => {
-                  const entryOffset = offset + (dir > 0 ? 1 : -1);
-                  return getOffscreenStyle(entryOffset);
-                }}
+                initial={false}
                 animate={{
                   scale,
                   opacity,
                   x: translateX,
                   z: translateZ,
                   rotateY,
-                }}
-                exit={(dir: number) => {
-                  const exitOffset = offset + (dir > 0 ? -1 : 1);
-                  return getOffscreenStyle(exitOffset);
                 }}
                 transition={{
                   duration: 0.5,
@@ -197,9 +191,7 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                   zIndex,
                   position: "absolute",
                 }}
-                className={`select-none ${
-                  isActive ? "cursor-pointer" : "cursor-pointer"
-                }`}
+                className="select-none cursor-pointer"
               >
                 <div
                   className={`relative w-[420px] h-[520px] rounded-lg overflow-hidden transition-shadow duration-500 ${
@@ -227,21 +219,20 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                     >
                       {image.title}
                     </motion.h3>
-                    <motion.button
+                    <motion.div
                       animate={{
                         opacity: isActive ? 1 : 0,
                         y: isActive ? 0 : 10,
                         pointerEvents: isActive ? "auto" : "none",
                       }}
                       transition={{ duration: 0.3, delay: isActive ? 0.1 : 0 }}
-                      className="bg-white text-black px-7 py-2.5 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
                       onClick={(e) => {
                         e.stopPropagation();
                         console.log(`View collection: ${image.title}`);
                       }}
                     >
-                      View Collection
-                    </motion.button>
+                      <AnimatedButton text="View Collection" />
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>
