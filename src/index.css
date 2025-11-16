@@ -29,6 +29,7 @@ All colors MUST be HSL.
 
     --accent: 40 70% 55%; /* Rich gold */
     --accent-foreground: 38 25% 20%; /* Dark brown */
+    --accent-glow: 38 90% 70%; /* Bright golden glow */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -73,6 +74,7 @@ All colors MUST be HSL.
 
     --accent: 40 70% 55%; /* Rich gold */
     --accent-foreground: 38 15% 8%; /* Very dark brown */
+    --accent-glow: 38 90% 70%; /* Bright golden glow */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
