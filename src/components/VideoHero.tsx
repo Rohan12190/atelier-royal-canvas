@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import AnimatedButton from "@/components/AnimatedButton";
 
 const VideoHero = () => {
   const scrollToSection = (id: string) => {
@@ -29,53 +29,49 @@ const VideoHero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-6"
+        >
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-white to-transparent mx-auto" />
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-serif text-[8vw] font-bold text-white uppercase tracking-[0.15em] mb-8 leading-none"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="font-serif text-[8vw] font-bold text-white uppercase tracking-[0.15em] mb-4 leading-none"
         >
-          Looks You Remember
+          Creative Portfolio
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-xl md:text-2xl text-white/90 uppercase tracking-[0.3em] mb-12 font-light"
+        >
+          Design · Development · Innovation
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex gap-6"
         >
-          <Button
-            onClick={() => scrollToSection("categories")}
-            variant="outline"
-            size="lg"
-            className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-widest text-sm px-8 py-6"
-          >
-            Shop Now →
-          </Button>
+          <AnimatedButton 
+            text="View Work" 
+            onClick={() => scrollToSection("carousel")}
+          />
+          <AnimatedButton 
+            text="Contact" 
+            onClick={() => scrollToSection("benefits")}
+          />
         </motion.div>
       </div>
-
-      {/* Bottom Navigation */}
-      <motion.nav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="absolute bottom-[5vh] left-1/2 -translate-x-1/2 z-10"
-      >
-        <div className="flex gap-10">
-          <button onClick={() => scrollToSection("carousel")} className="text-white text-sm uppercase tracking-widest hover:opacity-70 transition-opacity">
-            Limited Drops
-          </button>
-          <button onClick={() => scrollToSection("featured")} className="text-white text-sm uppercase tracking-widest hover:opacity-70 transition-opacity">
-            Iconic Styling
-          </button>
-          <button onClick={() => scrollToSection("categories")} className="text-white text-sm uppercase tracking-widest hover:opacity-70 transition-opacity">
-            This Season
-          </button>
-          <button onClick={() => scrollToSection("benefits")} className="text-white text-sm uppercase tracking-widest hover:opacity-70 transition-opacity">
-            NS Story
-          </button>
-        </div>
-      </motion.nav>
     </section>
   );
 };
