@@ -1,38 +1,45 @@
 .animated-button {
-  font-weight: bold;
-  color: white;
-  border-radius: 2rem;
+  font-weight: 600;
+  color: hsl(var(--primary-foreground));
+  border-radius: 0;
   cursor: pointer;
-  min-width: 120px;
-  height: 42.66px;
-  border: none;
-  background-color: hsl(var(--primary));
-  display: flex;
+  min-width: 160px;
+  height: 48px;
+  border: 2px solid hsl(var(--accent));
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   position: relative; 
   overflow: hidden;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: background-color 0.3s ease;
+  letter-spacing: 0.15em;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px hsla(var(--accent) / 0.3);
 }
 
 .animated-button:hover {
-  background-color: hsl(var(--primary) / 0.9);
+  box-shadow: 0 6px 20px hsla(var(--accent) / 0.5);
+  transform: translateY(-2px);
 }
 
 .animated-button .span-mother {
   display: flex;
   overflow: hidden;
+  gap: 0.05em;
 }
 
 .animated-button:hover .span-mother {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .animated-button:hover .span-mother span {
-  transform: translateY(-1.2em);
+  transform: translateY(-2em);
 }
 
 .animated-button .span-mother span:nth-child(1) {
@@ -79,10 +86,14 @@
   display: flex;
   position: absolute;
   overflow: hidden;
+  gap: 0.05em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .animated-button .span-mother2 span {
-  transform: translateY(1.2em);
+  transform: translateY(2em);
 }
 
 .animated-button:hover .span-mother2 span {
