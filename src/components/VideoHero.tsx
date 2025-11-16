@@ -60,16 +60,13 @@ const VideoHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex gap-6"
         >
-          <AnimatedButton 
-            text="View Work" 
+          <button
             onClick={() => scrollToSection("carousel")}
-          />
-          <AnimatedButton 
-            text="Contact" 
-            onClick={() => scrollToSection("benefits")}
-          />
+            className="border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 uppercase tracking-[0.15em] text-sm font-semibold px-10 py-4 min-w-[160px]"
+          >
+            View Work
+          </button>
         </motion.div>
       </div>
     </section>
