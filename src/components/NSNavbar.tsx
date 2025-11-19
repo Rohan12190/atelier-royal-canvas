@@ -36,7 +36,7 @@ const NSNavbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="font-serif text-3xl font-bold text-foreground">
-            NS
+            ATELIER
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,19 +45,19 @@ const NSNavbar = () => {
               onClick={() => scrollToSection("carousel")}
               className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
-              Collections
+              Work
             </button>
             <button
               onClick={() => scrollToSection("featured")}
               className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
-              Featured
+              Philosophy
             </button>
             <button
-              onClick={() => scrollToSection("categories")}
+              onClick={() => scrollToSection("benefits")}
               className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
-              Shop
+              About
             </button>
             <Link
               to="/contact"
@@ -80,19 +80,19 @@ const NSNavbar = () => {
                   onClick={() => scrollToSection("carousel")}
                   className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
                 >
-                  Collections
+                  Work
                 </button>
                 <button
                   onClick={() => scrollToSection("featured")}
                   className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
                 >
-                  Featured
+                  Philosophy
                 </button>
                 <button
-                  onClick={() => scrollToSection("categories")}
+                  onClick={() => scrollToSection("benefits")}
                   className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
                 >
-                  Shop
+                  About
                 </button>
                 <Link
                   to="/contact"

@@ -36,14 +36,15 @@ const FeaturedSection = () => {
           className="relative z-10"
         >
           <h2 className="font-serif text-[6vw] uppercase font-bold mb-4 leading-tight">
-            From the
+            Design
             <br />
-            Atelier
+            Philosophy
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            We believe in the power of timeless elegance. Our collections are a
-            blend of classic sophistication and modern artistry, crafted for
-            looks you'll remember forever.
+            Design is deeply personal—a continuation of honest handwork and craftsmanship. 
+            I focus on clarity, removing anything unnecessary so the main idea remains perfectly clear. 
+            Every piece should speak through quality materials and careful craft, not loud decorations. 
+            The result is work that feels quiet, strong, and enduring.
           </p>
           <AnimatedButton
             text="Learn More"

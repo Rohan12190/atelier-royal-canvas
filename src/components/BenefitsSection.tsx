@@ -4,10 +4,10 @@ import { Scissors, Gem, Infinity, User } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const benefits = [
-  { icon: Scissors, text: "Expert Craftsmanship" },
-  { icon: Gem, text: "Premium Materials" },
-  { icon: Infinity, text: "Timeless Design" },
-  { icon: User, text: "Bespoke Service" },
+  { icon: Scissors, text: "Pattern Drafting" },
+  { icon: Gem, text: "Draping & Construction" },
+  { icon: Infinity, text: "Couture Design" },
+  { icon: User, text: "Editorial Styling" },
 ];
 
 const BenefitsSection = () => {
@@ -21,10 +21,10 @@ const BenefitsSection = () => {
         className="text-center mb-16"
       >
         <h2 className="font-serif text-5xl font-bold mb-4 uppercase">
-          The NS Story
+          Skills & Expertise
         </h2>
         <p className="text-muted-foreground uppercase tracking-[0.3em] text-sm">
-          Our Philosophy
+          Core Capabilities
         </p>
       </motion.div>
 

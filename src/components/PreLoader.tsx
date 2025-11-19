@@ -23,24 +23,15 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
       className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
     >
       <div className="relative flex flex-col items-center">
-        {/* NS Logo Animation */}
-        <div className="relative w-[150px] h-[100px] mb-6 overflow-hidden">
-          {/* Use clip-path for a "drawing" effect */}
+        {/* Atelier Logo Animation */}
+        <div className="relative w-[300px] h-[120px] mb-6 overflow-hidden flex items-center justify-center">
           <motion.div
             initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
             animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
-            className="absolute top-0 left-0 font-serif text-[100px] font-bold leading-none text-foreground"
+            transition={{ duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+            className="font-serif text-[80px] font-light leading-none text-foreground tracking-[0.1em]"
           >
-            N
-          </motion.div>
-          <motion.div
-            initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
-            animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
-            className="absolute top-0 left-[50px] font-serif text-[100px] font-bold leading-none text-foreground"
-          >
-            S
+            ATELIER
           </motion.div>
         </div>
 
@@ -48,10 +39,10 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.0 }}
-          className="font-serif text-xl tracking-[0.2em] uppercase text-center text-foreground"
+          transition={{ duration: 0.5, delay: 1.2 }}
+          className="font-serif text-lg tracking-[0.3em] uppercase text-center text-foreground/80"
         >
-          Looks You Remember
+          Fashion Designer
         </motion.h2>
       </div>
     </motion.div>

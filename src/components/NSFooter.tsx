@@ -7,42 +7,42 @@ const NSFooter = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-[5vh] border-b border-gray-800">
         {/* Column 1 - Logo */}
         <div>
-          <div className="font-serif text-4xl font-bold">NS</div>
+          <div className="font-serif text-4xl font-bold">ATELIER</div>
         </div>
 
         {/* Column 2 - For Customers */}
         <div>
           <h4 className="uppercase text-white font-semibold mb-4 tracking-wider">
-            For Customers
+            Collections
           </h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Shipping
+              <a href="#carousel" className="text-gray-400 hover:text-white transition-colors">
+                Portfolio
               </a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Returns
+              <a href="#featured" className="text-gray-400 hover:text-white transition-colors">
+                Design Philosophy
               </a>
             </li>
             <li>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                FAQ
+              <a href="#benefits" className="text-gray-400 hover:text-white transition-colors">
+                About
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Column 3 - About Company */}
+        {/* Column 3 - About */}
         <div>
           <h4 className="uppercase text-white font-semibold mb-4 tracking-wider">
-            About Company
+            Connect
           </h4>
           <ul className="space-y-2">
             <li>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                About NS Store
+                Behance
               </a>
             </li>
             <li>
@@ -73,7 +73,7 @@ const NSFooter = () => {
 
       {/* Bottom Bar */}
       <div className="flex flex-col md:flex-row justify-between items-center pt-[3vh] gap-4">
-        <p className="text-gray-400 text-sm">© 2025 NS Store. All rights reserved.</p>
+        <p className="text-gray-400 text-sm">© 2025 Atelier. All rights reserved.</p>
         
         <div className="flex gap-4">
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
