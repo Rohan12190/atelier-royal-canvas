@@ -45,7 +45,7 @@ const VideoHero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-serif text-[8vw] font-bold text-white uppercase tracking-[0.15em] mb-4 leading-none"
         >
-          Atelier
+          Khushi Lohchab
         </motion.h1>
 
         <motion.p

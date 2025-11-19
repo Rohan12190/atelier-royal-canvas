@@ -23,15 +23,23 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
       className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
     >
       <div className="relative flex flex-col items-center">
-        {/* Atelier Logo Animation */}
-        <div className="relative w-[300px] h-[120px] mb-6 overflow-hidden flex items-center justify-center">
+        {/* KL Logo Animation */}
+        <div className="relative w-[200px] h-[120px] mb-6 overflow-hidden">
           <motion.div
             initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
             animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-            transition={{ duration: 1.2, ease: "easeInOut", delay: 0.2 }}
-            className="font-serif text-[80px] font-light leading-none text-foreground tracking-[0.1em]"
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+            className="absolute top-0 left-0 font-serif text-[100px] font-bold leading-none text-foreground"
           >
-            ATELIER
+            K
+          </motion.div>
+          <motion.div
+            initial={{ clipPath: "polygon(100% 0, 100% 0, 100% 100%, 100% 100%)" }}
+            animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.4 }}
+            className="absolute top-0 left-[60px] font-serif text-[100px] font-bold leading-none text-foreground"
+          >
+            L
           </motion.div>
         </div>
 

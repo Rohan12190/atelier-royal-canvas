@@ -36,7 +36,7 @@ const NSNavbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="font-serif text-3xl font-bold text-foreground">
-            ATELIER
+            KL
           </Link>
 
           {/* Desktop Navigation */}
