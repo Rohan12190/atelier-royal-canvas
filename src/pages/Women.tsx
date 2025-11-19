@@ -3,6 +3,8 @@ import NSNavbar from "@/components/NSNavbar";
 import NSFooter from "@/components/NSFooter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
+
 import {
   Select,
   SelectContent,
@@ -17,12 +19,48 @@ import womensReady from "@/assets/womens-ready-to-wear.jpg";
 import womensStatement from "@/assets/womens-statement-pieces.jpg";
 
 const products = [
-  { id: 1, name: "Haute Couture Dress", price: 2499, category: "dresses", image: womensCouture },
-  { id: 2, name: "Ready to Wear Ensemble", price: 1299, category: "ready-to-wear", image: womensReady },
-  { id: 3, name: "Statement Evening Gown", price: 3499, category: "dresses", image: womensStatement },
-  { id: 4, name: "Silk Blouse", price: 599, category: "tops", image: womensCouture },
-  { id: 5, name: "Designer Skirt", price: 899, category: "bottoms", image: womensReady },
-  { id: 6, name: "Luxury Coat", price: 1999, category: "outerwear", image: womensStatement },
+  {
+    id: 1,
+    name: "Haute Couture Dress",
+    price: 2499,
+    category: "dresses",
+    image: womensCouture,
+  },
+  {
+    id: 2,
+    name: "Ready to Wear Ensemble",
+    price: 1299,
+    category: "ready-to-wear",
+    image: womensReady,
+  },
+  {
+    id: 3,
+    name: "Statement Evening Gown",
+    price: 3499,
+    category: "dresses",
+    image: womensStatement,
+  },
+  {
+    id: 4,
+    name: "Silk Blouse",
+    price: 599,
+    category: "tops",
+    image: womensCouture,
+  },
+  {
+    id: 5,
+    name: "Designer Skirt",
+    price: 899,
+    category: "bottoms",
+    image: womensReady,
+  },
+  {
+    id: 6,
+    name: "Luxury Coat",
+    price: 1999,
+    category: "outerwear",
+    image: womensStatement,
+  },
 ];
 
 const Women = () => {
@@ -42,7 +80,7 @@ const Women = () => {
   return (
     <div className="min-h-screen">
       <NSNavbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center">
@@ -114,12 +152,12 @@ const Women = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-                <Button
-                  variant="outline"
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black hover:bg-black hover:text-white border-none"
-                >
-                  Quick View
-                </Button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <UniversalAnimatedButton
+                    text="Quick View"
+                    className="bg-white text-black border-none"
+                  />
+                </div>
               </div>
               <h3 className="font-serif text-xl mb-2">{product.name}</h3>
               <p className="text-muted-foreground">${product.price}</p>

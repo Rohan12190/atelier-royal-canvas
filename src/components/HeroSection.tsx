@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import { useEffect, useState } from "react";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
 
 const HeroSection = () => {
   const scrollToCollections = () => {
@@ -39,7 +40,7 @@ const HeroSection = () => {
         >
           <div className="h-px w-32 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto" />
         </motion.div>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,14 +64,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <Button
+          <UniversalAnimatedButton
+            text="Explore Collections"
             onClick={scrollToCollections}
             variant="outline"
-            size="lg"
-            className="border-2 border-white text-white hover:bg-white hover:text-primary text-sm uppercase tracking-widest px-8 py-6 transition-all duration-300"
-          >
-            Explore Collections
-          </Button>
+            className="text-sm uppercase tracking-widest px-8 py-6"
+          />
         </motion.div>
 
         {/* Scroll Indicator */}

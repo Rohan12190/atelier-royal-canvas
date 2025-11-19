@@ -1,18 +1,41 @@
 import React, { useState, useRef } from 'react';
 import './AnimatedButton.css';
 
-interface AnimatedButtonProps {
+interface UniversalAnimatedButtonProps {
   text: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   className?: string;
+  variant?: 'default' | 'outline' | 'ghost';
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const AnimatedButton = ({ text, onClick, className = '' }: AnimatedButtonProps) => {
+const UniversalAnimatedButton = ({ 
+  text, 
+  onClick, 
+  className = '',
+  variant = 'default',
+  disabled = false,
+  type = 'button'
+}: UniversalAnimatedButtonProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const letters = text.split('');
   
+  const getVariantClass = () => {
+    switch (variant) {
+      case 'outline':
+        return 'variant-outline';
+      case 'ghost':
+        return 'variant-ghost';
+      default:
+        return '';
+    }
+  };
+  
   const handleMouseEnter = () => {
+    if (disabled) return;
+    
     // Clear any existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -38,10 +61,12 @@ const AnimatedButton = ({ text, onClick, className = '' }: AnimatedButtonProps) 
   
   return (
     <button 
-      className={`animated-button ${isAnimating ? 'is-animating' : ''} ${className}`} 
+      className={`animated-button ${getVariantClass()} ${isAnimating ? 'is-animating' : ''} ${className}`} 
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      disabled={disabled}
+      type={type}
     >
       <span className="span-mother">
         {letters.map((letter, index) => (
@@ -57,4 +82,4 @@ const AnimatedButton = ({ text, onClick, className = '' }: AnimatedButtonProps) 
   );
 };
 
-export default AnimatedButton;
+export default UniversalAnimatedButton;

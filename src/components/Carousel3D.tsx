@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import AnimatedButton from "@/components/AnimatedButton";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
 
 interface Carousel3DProps {
   images: { src: string; alt: string; title: string }[];
@@ -8,10 +8,10 @@ interface Carousel3DProps {
 
 const Carousel3D = ({ images }: Carousel3DProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // 1 for next, -1 for prev
+  const [direction, setDirection] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false); // Debounce navigation
+  const [isNavigating, setIsNavigating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragStartX = useRef(0);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
@@ -20,25 +20,22 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
   // Helper function to set index and direction
   const changeActiveIndex = (newIndex: number, newDirection: number) => {
     if (!isTransitioning && !isNavigating) {
-      // Handle edge cases for direction
       let dir = newDirection;
       if (newIndex === 0 && activeIndex === images.length - 1) {
-        dir = 1; // Wrapping from last to first
+        dir = 1;
       } else if (newIndex === images.length - 1 && activeIndex === 0) {
-        dir = -1; // Wrapping from first to last
+        dir = -1;
       }
 
       setDirection(dir);
       setActiveIndex(newIndex);
-
-      // Set transitioning and navigating flags
       setIsTransitioning(true);
       setIsNavigating(true);
       
       setTimeout(() => {
         setIsTransitioning(false);
         setIsNavigating(false);
-      }, 500); // Match animation duration
+      }, 500);
     }
   };
 
@@ -87,11 +84,9 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
 
     if (Math.abs(dragDistance) > threshold) {
       if (dragDistance > 0) {
-        // Dragged right (go to previous)
         const newIndex = (activeIndex - 1 + images.length) % images.length;
         changeActiveIndex(newIndex, -1);
       } else {
-        // Dragged left (go to next)
         const newIndex = (activeIndex + 1) % images.length;
         changeActiveIndex(newIndex, 1);
       }
@@ -106,9 +101,8 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
     }
   };
 
-  // Get visible cards with proper wrapping
   const getVisibleCards = () => {
-    const visibleCount = 7; // Show 7 cards total (3 left, active, 3 right)
+    const visibleCount = 7;
     const cards = [];
 
     for (let i = -3; i <= 3; i++) {
@@ -124,18 +118,6 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
   };
 
   const visibleCards = getVisibleCards();
-
-  // Function to define the style for "off-screen" cards
-  const getOffscreenStyle = (offset: number) => {
-    const absOffset = Math.abs(offset);
-    return {
-      scale: Math.max(0.5, 1 - absOffset * 0.15),
-      opacity: 0,
-      x: offset * 380, // Use the same spacing logic
-      z: -Math.min(300, 80 * absOffset), // Push further back
-      rotateY: Math.max(-25, Math.min(25, offset * 10)),
-    };
-  };
 
   return (
     <section
@@ -161,13 +143,12 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
             const isActive = offset === 0;
             const absOffset = Math.abs(offset);
 
-            // Calculate transformations based on position relative to active
             const scale = isActive ? 1 : Math.max(0.65, 1 - absOffset * 0.15);
             const opacity = absOffset > 2 ? 0 : Math.max(0.4, 1 - absOffset * 0.25);
             const zIndex = isActive ? 50 : Math.max(0, 40 - absOffset * 8);
-            const translateX = offset * 380; // Spacing between cards
-            const translateZ = isActive ? 0 : -Math.min(250, 80 * absOffset); // Depth effect
-            const rotateY = Math.max(-25, Math.min(25, offset * 10)); // Rotation effect
+            const translateX = offset * 380;
+            const translateZ = isActive ? 0 : -Math.min(250, 80 * absOffset);
+            const rotateY = Math.max(-25, Math.min(25, offset * 10));
 
             return (
               <motion.div
@@ -200,7 +181,7 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                 className="select-none cursor-pointer"
               >
                 <div
-                  className={`relative w-[420px] h-[520px] rounded-lg overflow-hidden transition-shadow duration-500 ${
+                  className={`group relative w-[420px] h-[520px] rounded-lg overflow-hidden transition-shadow duration-500 ${
                     isActive
                       ? "shadow-[0_25px_70px_rgba(0,0,0,0.5)]"
                       : "shadow-[0_15px_40px_rgba(0,0,0,0.3)]"
@@ -213,10 +194,8 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                     draggable={false}
                   />
 
-                  {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                  {/* Title */}
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <motion.h3
                       animate={{ opacity: isActive ? 1 : 0.6 }}
@@ -225,21 +204,23 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
                     >
                       {image.title}
                     </motion.h3>
-                    <motion.button
+                    <motion.div
                       animate={{
                         opacity: isActive ? 1 : 0,
                         y: isActive ? 0 : 10,
                         pointerEvents: isActive ? "auto" : "none",
                       }}
                       transition={{ duration: 0.3, delay: isActive ? 0.1 : 0 }}
-                      className="bg-white text-black px-8 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-accent hover:text-accent-foreground transition-all duration-300"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        console.log(`View collection: ${image.title}`);
-                      }}
                     >
-                      Collection
-                    </motion.button>
+                      <UniversalAnimatedButton
+                        text="Collection"
+                        onClick={(e) => {
+                          e?.stopPropagation();
+                          console.log(`View collection: ${image.title}`);
+                        }}
+                        className="bg-white text-black px-8 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-accent hover:text-accent-foreground border-none min-w-[140px] h-[42px]"
+                      />
+                    </motion.div>
                   </div>
                 </div>
               </motion.div>
@@ -247,8 +228,6 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
           })}
         </AnimatePresence>
       </div>
-
-      {/* Navigation dots REMOVED */}
 
       {/* Arrow Navigation - Capsule/Pill Shape */}
       <button
@@ -259,7 +238,7 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
           }
         }}
         disabled={isNavigating}
-        className="absolute left-8 top-1/2 -translate-y-1/2 z-50 bg-accent/20 hover:bg-accent/40 backdrop-blur-sm text-accent border border-accent/50 px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-50 bg-white/20 backdrop-blur-sm text-accent border border-accent/50 px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         aria-label="Previous slide"
       >
         <svg
@@ -286,7 +265,7 @@ const Carousel3D = ({ images }: Carousel3DProps) => {
           }
         }}
         disabled={isNavigating}
-        className="absolute right-8 top-1/2 -translate-y-1/2 z-50 bg-accent/20 hover:bg-accent/40 backdrop-blur-sm text-accent border border-accent/50 px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        className="absolute right-8 top-1/2 -translate-y-1/2 z-50 bg-white/20 backdrop-blur-sm text-accent border border-accent/50 px-6 py-3 rounded-full transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         aria-label="Next slide"
       >
         <svg

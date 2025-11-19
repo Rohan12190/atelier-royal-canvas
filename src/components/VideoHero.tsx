@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedButton from "@/components/AnimatedButton";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
 
 const VideoHero = () => {
   const scrollToSection = (id: string) => {
@@ -61,12 +62,11 @@ const VideoHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <button
+          <UniversalAnimatedButton
+            text="View Work"
             onClick={() => scrollToSection("carousel")}
-            className="border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 uppercase tracking-[0.15em] text-sm font-semibold px-10 py-4 min-w-[160px]"
-          >
-            View Work
-          </button>
+            className="border-2 border-accent bg-transparent text-accent hover:bg-accent hover:text-accent-foreground uppercase tracking-[0.15em] text-sm font-semibold px-10 py-4 min-w-[160px]"
+          />
         </motion.div>
       </div>
     </section>

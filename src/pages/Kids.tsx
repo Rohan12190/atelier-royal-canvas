@@ -3,6 +3,8 @@ import NSNavbar from "@/components/NSNavbar";
 import NSFooter from "@/components/NSFooter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
+
 import {
   Select,
   SelectContent,
@@ -17,12 +19,48 @@ import jewelry from "@/assets/fine-jewelry.jpg";
 import footwear from "@/assets/designer-footwear.jpg";
 
 const products = [
-  { id: 1, name: "Kids Designer Dress", price: 299, category: "dresses", image: luxuryBags },
-  { id: 2, name: "Junior Suit", price: 399, category: "formal", image: jewelry },
-  { id: 3, name: "Casual Outfit Set", price: 199, category: "casual", image: footwear },
-  { id: 4, name: "Kids Jacket", price: 249, category: "outerwear", image: luxuryBags },
-  { id: 5, name: "Party Dress", price: 349, category: "dresses", image: jewelry },
-  { id: 6, name: "School Wear", price: 179, category: "casual", image: footwear },
+  {
+    id: 1,
+    name: "Kids Designer Dress",
+    price: 299,
+    category: "dresses",
+    image: luxuryBags,
+  },
+  {
+    id: 2,
+    name: "Junior Suit",
+    price: 399,
+    category: "formal",
+    image: jewelry,
+  },
+  {
+    id: 3,
+    name: "Casual Outfit Set",
+    price: 199,
+    category: "casual",
+    image: footwear,
+  },
+  {
+    id: 4,
+    name: "Kids Jacket",
+    price: 249,
+    category: "outerwear",
+    image: luxuryBags,
+  },
+  {
+    id: 5,
+    name: "Party Dress",
+    price: 349,
+    category: "dresses",
+    image: jewelry,
+  },
+  {
+    id: 6,
+    name: "School Wear",
+    price: 179,
+    category: "casual",
+    image: footwear,
+  },
 ];
 
 const Kids = () => {
@@ -42,7 +80,7 @@ const Kids = () => {
   return (
     <div className="min-h-screen">
       <NSNavbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center">
@@ -113,12 +151,12 @@ const Kids = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-                <Button
-                  variant="outline"
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black hover:bg-black hover:text-white border-none"
-                >
-                  Quick View
-                </Button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <UniversalAnimatedButton
+                    text="Quick View"
+                    className="bg-white text-black border-none"
+                  />
+                </div>
               </div>
               <h3 className="font-serif text-xl mb-2">{product.name}</h3>
               <p className="text-muted-foreground">${product.price}</p>

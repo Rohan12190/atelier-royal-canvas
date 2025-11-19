@@ -3,6 +3,8 @@ import NSNavbar from "@/components/NSNavbar";
 import NSFooter from "@/components/NSFooter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import UniversalAnimatedButton from "@/components/UniversalAnimatedButton";
+
 import {
   Select,
   SelectContent,
@@ -17,12 +19,48 @@ import mensEvening from "@/assets/mens-evening-wear.jpg";
 import mensCasual from "@/assets/mens-casual-elegance.jpg";
 
 const products = [
-  { id: 1, name: "Tailored Suit", price: 1999, category: "suits", image: mensTailored },
-  { id: 2, name: "Evening Wear", price: 1499, category: "formal", image: mensEvening },
-  { id: 3, name: "Casual Elegance", price: 899, category: "casual", image: mensCasual },
-  { id: 4, name: "Designer Blazer", price: 1299, category: "outerwear", image: mensTailored },
-  { id: 5, name: "Luxury Shirt", price: 499, category: "shirts", image: mensEvening },
-  { id: 6, name: "Premium Trousers", price: 599, category: "pants", image: mensCasual },
+  {
+    id: 1,
+    name: "Tailored Suit",
+    price: 1999,
+    category: "suits",
+    image: mensTailored,
+  },
+  {
+    id: 2,
+    name: "Evening Wear",
+    price: 1499,
+    category: "formal",
+    image: mensEvening,
+  },
+  {
+    id: 3,
+    name: "Casual Elegance",
+    price: 899,
+    category: "casual",
+    image: mensCasual,
+  },
+  {
+    id: 4,
+    name: "Designer Blazer",
+    price: 1299,
+    category: "outerwear",
+    image: mensTailored,
+  },
+  {
+    id: 5,
+    name: "Luxury Shirt",
+    price: 499,
+    category: "shirts",
+    image: mensEvening,
+  },
+  {
+    id: 6,
+    name: "Premium Trousers",
+    price: 599,
+    category: "pants",
+    image: mensCasual,
+  },
 ];
 
 const Men = () => {
@@ -42,7 +80,7 @@ const Men = () => {
   return (
     <div className="min-h-screen">
       <NSNavbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center">
@@ -115,12 +153,12 @@ const Men = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-                <Button
-                  variant="outline"
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white text-black hover:bg-black hover:text-white border-none"
-                >
-                  Quick View
-                </Button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <UniversalAnimatedButton
+                    text="Quick View"
+                    className="bg-white text-black border-none"
+                  />
+                </div>
               </div>
               <h3 className="font-serif text-xl mb-2">{product.name}</h3>
               <p className="text-muted-foreground">${product.price}</p>

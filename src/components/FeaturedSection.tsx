@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import AnimatedButton from "@/components/AnimatedButton";
 import featuredImage from "@/assets/womens-haute-couture.jpg";
 
+
 const FeaturedSection = () => {
   // Helper function to scroll to the "NS Story" (benefits section)
   const scrollToSection = (id: string) => {
