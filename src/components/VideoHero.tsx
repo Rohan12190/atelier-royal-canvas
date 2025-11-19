@@ -45,7 +45,7 @@ const VideoHero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-serif text-[8vw] font-bold text-white uppercase tracking-[0.15em] mb-4 leading-none"
         >
-          Creative Portfolio
+          Atelier
         </motion.h1>
 
         <motion.p
@@ -54,7 +54,7 @@ const VideoHero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl md:text-2xl text-white/90 uppercase tracking-[0.3em] mb-12 font-light"
         >
-          Design · Development · Innovation
+          Fashion Designer Portfolio
         </motion.p>
 
         <motion.div

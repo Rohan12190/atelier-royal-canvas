@@ -11,9 +11,9 @@ import "./TextAnimation.css";
 // --- END ADDED ---
 
 const categories = [
-  { name: "WOMEN", image: womenImage, path: "/women" },
-  { name: "MEN", image: menImage, path: "/men" },
-  { name: "KIDS", image: kidsImage, path: "/kids" },
+  { name: "HAUTE COUTURE", image: womenImage, path: "/women" },
+  { name: "READY TO WEAR", image: menImage, path: "/men" },
+  { name: "EDITORIAL", image: kidsImage, path: "/kids" },
 ];
 
 // --- NEW INTERNAL COMPONENT ---
