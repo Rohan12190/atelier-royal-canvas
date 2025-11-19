@@ -22,9 +22,9 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
       transition={{ duration: 0.5, delay: 1.8 }} // Start fade-out slightly before timer ends
       className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
     >
-      <div className="relative flex flex-col items-center">
+      <div className="relative  flex flex-col items-center justify-center">
         {/* KL Logo Animation */}
-        <div className="relative w-[200px] h-[120px] mb-6 overflow-hidden">
+        <div className="relative w-[200px] h-[120px]  overflow-hidden">
           <motion.div
             initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
             animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}

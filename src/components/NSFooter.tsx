@@ -40,21 +40,25 @@ const NSFooter = () => {
           </ul>
         </div>
 
-        {/* Column 3 - About */}
+        {/* Column 3 - Contact */}
         <div>
           <h4 className="uppercase text-white font-semibold mb-4 tracking-wider">
-            Connect
+            Contact
           </h4>
           <ul className="space-y-2">
             <li>
-              <a href="https://www.behance.net/gallery/221695531/portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                Behance
+              <a href="mailto:Khushilohchab3@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                Khushilohchab3@gmail.com
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                Contact
+              <a href="tel:+919518845008" className="text-gray-400 hover:text-white transition-colors">
+                +91 9518845008
               </a>
+            </li>
+            <li className="text-gray-400">
+              Navi Mumbai, Maharashtra<br />
+              A504, Regency Park, Sector 5, Kharghar
             </li>
           </ul>
         </div>
@@ -85,7 +89,7 @@ const NSFooter = () => {
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
             <Instagram className="w-5 h-5" />
           </a>
-          <a href="mailto:info@atelier.com" className="text-gray-400 hover:text-white transition-colors">
+          <a href="mailto:Khushilohchab3@gmail.com" className="text-gray-400 hover:text-white transition-colors">
             <Mail className="w-5 h-5" />
           </a>
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
