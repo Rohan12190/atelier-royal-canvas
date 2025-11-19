@@ -6,6 +6,9 @@ import Carousel3D from "@/components/Carousel3D";
 import FeaturedSection from "@/components/FeaturedSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import SkillsSection from "@/components/SkillsSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ContactSection from "@/components/ContactSection";
 import NSFooter from "@/components/NSFooter";
 
 // Import images for carousel
@@ -39,7 +42,10 @@ const NSIndex = () => {
           <Carousel3D images={carouselImages} />
           <FeaturedSection />
           <CategoriesSection />
+          <SkillsSection />
+          <ExperienceSection />
           <BenefitsSection />
+          <ContactSection />
           <NSFooter />
         </div>
       )}

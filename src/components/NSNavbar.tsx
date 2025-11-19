@@ -54,17 +54,23 @@ const NSNavbar = () => {
               Philosophy
             </button>
             <button
-              onClick={() => scrollToSection("benefits")}
+              onClick={() => scrollToSection("skills")}
               className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
-              About
+              Skills
             </button>
-            <Link
-              to="/contact"
+            <button
+              onClick={() => scrollToSection("experience")}
+              className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
+            >
+              Experience
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
               className="text-sm uppercase tracking-widest hover:opacity-70 transition-opacity"
             >
               Contact
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu */}
@@ -89,18 +95,23 @@ const NSNavbar = () => {
                   Philosophy
                 </button>
                 <button
-                  onClick={() => scrollToSection("benefits")}
+                  onClick={() => scrollToSection("skills")}
                   className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
                 >
-                  About
+                  Skills
                 </button>
-                <Link
-                  to="/contact"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  onClick={() => scrollToSection("experience")}
+                  className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
+                >
+                  Experience
+                </button>
+                <button
+                  onClick={() => scrollToSection("contact")}
                   className="text-left text-lg uppercase tracking-widest hover:opacity-70 transition-opacity"
                 >
                   Contact
-                </Link>
+                </button>
               </nav>
             </SheetContent>
           </Sheet>
