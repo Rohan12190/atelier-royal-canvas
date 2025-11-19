@@ -7,7 +7,8 @@ const NSFooter = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-[5vh] border-b border-gray-800">
         {/* Column 1 - Logo */}
         <div>
-          <div className="font-serif text-4xl font-bold">ATELIER</div>
+          <div className="font-serif text-4xl font-bold">KL</div>
+          <p className="text-gray-400 text-sm mt-2">Khushi Lohchab</p>
         </div>
 
         {/* Column 2 - For Customers */}
@@ -73,7 +74,7 @@ const NSFooter = () => {
 
       {/* Bottom Bar */}
       <div className="flex flex-col md:flex-row justify-between items-center pt-[3vh] gap-4">
-        <p className="text-gray-400 text-sm">© 2025 Atelier. All rights reserved.</p>
+        <p className="text-gray-400 text-sm">© 2025 Khushi Lohchab. All rights reserved.</p>
         
         <div className="flex gap-4">
           <a href="#" className="text-gray-400 hover:text-white transition-colors">
