@@ -14,7 +14,7 @@ const NSFooter = () => {
         {/* Column 2 - For Customers */}
         <div>
           <h4 className="uppercase text-white font-semibold mb-4 tracking-wider">
-            Collections
+            Navigation
           </h4>
           <ul className="space-y-2">
             <li>
@@ -28,8 +28,13 @@ const NSFooter = () => {
               </a>
             </li>
             <li>
-              <a href="#benefits" className="text-gray-400 hover:text-white transition-colors">
-                About
+              <a href="#skills" className="text-gray-400 hover:text-white transition-colors">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#experience" className="text-gray-400 hover:text-white transition-colors">
+                Experience
               </a>
             </li>
           </ul>
@@ -42,12 +47,12 @@ const NSFooter = () => {
           </h4>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.behance.net/gallery/221695531/portfolio" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Behance
               </a>
             </li>
             <li>
-              <a href="/contact" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
                 Contact
               </a>
             </li>
